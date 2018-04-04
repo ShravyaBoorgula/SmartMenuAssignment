@@ -51,7 +51,7 @@ Ext.define('SmartMenu.store.MenuTreeStore', {
         var navBar = Ext.ComponentQuery.query("[reference=navigationToolbar]")[0]; //get view of navigationToolbar;
         var ctrPanel = Ext.ComponentQuery.query("[reference=centerPanel]")[0]; //get view of centerPanel;
         Ext.each(records, function(rec, index){
-            console.log("rec: ", rec);
+            //console.log("rec: ", rec);
             navBar.add({
                 xtype: "button",
                 text: rec.data.name,
