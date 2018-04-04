@@ -29,7 +29,7 @@ Ext.application({
     views: [
         'Main',
         'CenterPanel',
-        'MyContainer1'
+        null
     ],
     controllers: [
         'HelperController'
