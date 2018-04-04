@@ -19,7 +19,7 @@
         "views": [
             "Main",
             "CenterPanel",
-            "MyPanel"
+            "MyContainer1"
         ]
     },
     "configAlternates": {
