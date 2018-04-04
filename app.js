@@ -29,10 +29,7 @@ Ext.application({
     views: [
         'Main',
         'CenterPanel',
-        null
-    ],
-    controllers: [
-        'HelperController'
+        'MyContainer1'
     ],
     name: 'SmartMenu',
 
