@@ -10,6 +10,7 @@
         "designer|userClassName": "CenterPanel",
         "height": "90%",
         "html": "something .... to check",
+        "reference": "centerPanel",
         "width": "100%"
     },
     "configAlternates": {
@@ -17,6 +18,7 @@
         "designer|userClassName": "string",
         "height": "auto",
         "html": "string",
+        "reference": "string",
         "width": "auto"
     },
     "name": "MyContainer",
