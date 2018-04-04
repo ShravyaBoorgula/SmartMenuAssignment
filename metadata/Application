@@ -1,0 +1,29 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "MenuTreeData"
+        ],
+        "name": "SmartMenu",
+        "stores": [
+            "MenuTreeStore"
+        ],
+        "views": [
+            "Main",
+            "CenterPanel"
+        ]
+    },
+    "configAlternates": {
+        "name": "string",
+        "models": "typedarray",
+        "stores": "typedarray",
+        "views": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application"
+}

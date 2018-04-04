@@ -1,0 +1,18 @@
+{
+    "type": "jsonresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "json_udvd0ymz",
+        "url": "resources/MenuTree.json"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "url": "uri"
+    },
+    "name": "json",
+    "designerId": "7e46d743-eee6-463b-8a8c-0130ca8c3548"
+}

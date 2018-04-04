@@ -1,0 +1,26 @@
+{
+    "type": "Ext.container.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "centerpanel",
+        "designer|userClassName": "CenterPanel",
+        "height": "90%",
+        "html": "something .... to check",
+        "width": "100%"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "html": "string",
+        "width": "auto"
+    },
+    "name": "MyContainer",
+    "designerId": "8e97055c-4d48-4e92-8011-3a578c949dc4",
+    "viewControllerInstanceId": "7e4fc06b-8909-4c5c-a607-ca883d8673de",
+    "viewModelInstanceId": "52b6c118-c7e4-402b-9b92-b07fc2645c1a"
+}

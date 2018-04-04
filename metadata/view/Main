@@ -1,0 +1,64 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|initialView": true,
+        "designer|userAlias": "main",
+        "designer|userClassName": "Main",
+        "layout": "vbox"
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto",
+        "container|align": "string",
+        "layout": "string"
+    },
+    "name": "MyViewport",
+    "designerId": "db214c30-8028-4545-b1a3-010efb0af2f5",
+    "viewControllerInstanceId": "021f79bb-d233-4f8c-ac60-c13016ff6fa5",
+    "viewModelInstanceId": "e1aa748b-3cd4-40d0-8859-daf8a9af2d53",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "navigationtoolbar",
+            "designerId": "7e64d451-ee0a-41a7-8a5b-6913a77617bd",
+            "masterInstanceId": "e0b877fa-abaf-4099-8bbe-b1164420bed4"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1
+            },
+            "configAlternates": {
+                "layout|flex": "number"
+            },
+            "name": "centerpanel",
+            "designerId": "86d0a892-e113-480e-b25f-63467086f1e9",
+            "masterInstanceId": "8e97055c-4d48-4e92-8011-3a578c949dc4"
+        }
+    ]
+}

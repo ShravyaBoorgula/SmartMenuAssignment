@@ -1,0 +1,67 @@
+{
+    "name": "SmartMenuAssignment",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "6.5.3.6",
+            "frameworkVersion": "6.5.3.57"
+        },
+        "urlPrefixTemplate": "http://localhost:1841",
+        "urlPrefix": "http://localhost:1841",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app",
+            "buildPlatform": false
+        }
+    },
+    "xdsVersion": "4.2.3",
+    "xdsBuild": 371,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext65",
+    "viewOrderMap": {
+        "view": [
+            "db214c30-8028-4545-b1a3-010efb0af2f5",
+            "e1aa748b-3cd4-40d0-8859-daf8a9af2d53",
+            "021f79bb-d233-4f8c-ac60-c13016ff6fa5",
+            "e0b877fa-abaf-4099-8bbe-b1164420bed4",
+            "2451e72b-c95e-45cb-b513-17390882d3d2",
+            "7fb848c9-2ceb-43e4-a98f-08bea1eb403d",
+            "8e97055c-4d48-4e92-8011-3a578c949dc4",
+            "52b6c118-c7e4-402b-9b92-b07fc2645c1a",
+            "7e4fc06b-8909-4c5c-a607-ca883d8673de"
+        ],
+        "store": [
+            "444420c7-dcc2-44c2-977d-2a7b48fd8f98"
+        ],
+        "controller": [],
+        "model": [
+            "6c7e2bc1-5ada-4af1-b44f-767f36f24a9f"
+        ],
+        "resource": [
+            "9ccc856c-617a-4070-a2d5-9fd9ca9eeacf",
+            "c2ab4377-09b3-4121-b5cb-43c427a7f5bd",
+            "57e7d0aa-13d4-43d2-ab84-383ff93e11da",
+            "7e46d743-eee6-463b-8a8c-0130ca8c3548"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

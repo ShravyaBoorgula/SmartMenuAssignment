@@ -1,0 +1,61 @@
+{
+"titles": [
+{
+"name" : "Company",
+"items" : [
+{
+"name": "About Us",
+"page" :"about-us"
+
+},
+{
+"name":"Team",
+"page":"team"
+}
+]
+},
+{
+"name" : "Technologies",
+"items" :[
+{
+"name" : "Sencha",
+"page": "sencha"
+}, 
+{
+"name" : "React",
+"page": "react"
+}
+]
+},
+{
+"name" : "Services",
+"items" :[
+{
+"name" : "Mobile App",
+"page": "mobile-app"
+}, 
+{
+"name" : "Web App",
+"page": "web-app"
+}
+]
+},
+{
+"name" : "Resources",
+items :[
+{
+"name" : "Blog",
+"page": "blog"
+}, 
+{
+"name" : "Books",
+"page": "books"
+},
+{
+"name": "Shop",
+"page": "shop"
+}
+]
+}
+]
+}
