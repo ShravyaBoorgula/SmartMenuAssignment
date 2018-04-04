@@ -18,123 +18,13 @@ Ext.define('SmartMenu.view.NavigationToolbar', {
     alias: 'widget.navigationtoolbar',
 
     requires: [
-        'SmartMenu.view.NavigationToolbarViewModel',
-        'Ext.button.Button',
-        'Ext.menu.Menu',
-        'Ext.menu.Item'
+        'SmartMenu.view.NavigationToolbarViewModel'
     ],
 
     viewModel: {
         type: 'navigationtoolbar'
     },
-    height: 40,
-
-    items: [
-        {
-            xtype: 'button',
-            margins: '5px',
-            text: 'Menu1Btn',
-            menu: {
-                xtype: 'menu',
-                cls: 'topMenu',
-                itemId: 'menu1',
-                width: 120,
-                items: [
-                    {
-                        xtype: 'menuitem',
-                        text: 'Menu Item'
-                    },
-                    {
-                        xtype: 'menuitem',
-                        text: 'Menu Item',
-                        menu: {
-                            xtype: 'menu',
-                            itemId: 'sub1Menu1',
-                            width: 120,
-                            items: [
-                                {
-                                    xtype: 'menuitem',
-                                    text: 'Menu Item'
-                                },
-                                {
-                                    xtype: 'menuitem',
-                                    text: 'Menu Item'
-                                },
-                                {
-                                    xtype: 'menuitem',
-                                    text: 'Menu Item'
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        xtype: 'menuitem',
-                        text: 'Menu Item',
-                        menu: {
-                            xtype: 'menu',
-                            itemId: 'sub2Menu1',
-                            width: 120,
-                            items: [
-                                {
-                                    xtype: 'menuitem',
-                                    text: 'Menu Item'
-                                },
-                                {
-                                    xtype: 'menuitem',
-                                    text: 'Menu Item'
-                                },
-                                {
-                                    xtype: 'menuitem',
-                                    text: 'Menu Item'
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            xtype: 'button',
-            text: 'Menu2Btn',
-            menu: {
-                xtype: 'menu',
-                itemId: 'menu2',
-                width: 120,
-                items: [
-                    {
-                        xtype: 'menuitem',
-                        text: 'Menu Item',
-                        menu: {
-                            xtype: 'menu',
-                            itemId: 'sub1Menu2',
-                            width: 120,
-                            items: [
-                                {
-                                    xtype: 'menuitem',
-                                    text: 'Menu Item'
-                                },
-                                {
-                                    xtype: 'menuitem',
-                                    text: 'Menu Item'
-                                },
-                                {
-                                    xtype: 'menuitem',
-                                    text: 'Menu Item'
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        xtype: 'menuitem',
-                        text: 'Menu Item'
-                    },
-                    {
-                        xtype: 'menuitem',
-                        text: 'Menu Item'
-                    }
-                ]
-            }
-        }
-    ]
+    reference: 'navigationToolbar',
+    height: 40
 
 });

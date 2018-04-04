@@ -24,6 +24,7 @@ Ext.define('SmartMenu.view.CenterPanel', {
     viewModel: {
         type: 'centerpanel'
     },
+    reference: 'centerPanel',
     height: '90%',
     html: 'something .... to check',
     width: '100%'

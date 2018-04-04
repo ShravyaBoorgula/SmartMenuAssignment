@@ -36,7 +36,36 @@ Ext.define('SmartMenu.store.MenuTreeStore', {
                     type: 'json',
                     rootProperty: 'titles'
                 }
+            },
+            listeners: {
+                load: {
+                    fn: me.onTreeStoreLoad,
+                    scope: me
+                }
             }
         }, cfg)]);
+    },
+
+    onTreeStoreLoad: function(treestore, records, successful, operation, node, eOpts) {
+        var me = this;
+        var navBar = Ext.ComponentQuery.query("[reference=navigationToolbar]")[0]; //get view of navigationToolbar;
+        var ctrPanel = Ext.ComponentQuery.query("[reference=centerPanel]")[0]; //get view of centerPanel;
+        Ext.each(records, function(rec, index){
+            console.log("rec: ", rec);
+            navBar.add({
+                xtype: "button",
+                text: rec.data.name,
+                listeners: {
+                     click: function(){
+                            console.log("called: ", rec.data.name);
+                            ctrPanel.setHtml("This is "+ rec.data.name + " content");
+                     }
+                }
+            });
+
+        }, this);
+
+
     }
+
 });
