@@ -4,46 +4,51 @@
 			"sub": [{
 					"name": "About Us",
 					"page": "about-us",
-                    "leaf": "true"
+                    "leaf": true
 
 				},
 				{
 					"name": "Team",
 					"page": "team",
-                    "leaf": "true"
+                    "leaf": true
 				},
 				{
 					"name": "Clients",
 					"sub": [{
 							"name": "Qualcomm",
 							"page": "qualcomm",
-                            "leaf": "true"
+                             "leaf": true
 						},
 						{
 							"name": "TechMahindra",
 							"page": "techmahindra",
-                            "leaf": "true"
+                            "leaf": true
 						},
 						{
 							"name": "Tibco",
 							"page": "tibco",
-                            "leaf": "true"
+                            "leaf": true
 						}
 					]
 				}
 			]
 		},
+        {
+            "name": "Career",
+            "page": "career",
+            "leaf": true
+        },
 		{
 			"name": "Technologies",
 			"sub": [{
 					"name": "Sencha",
 					"page": "sencha",
-                    "leaf": "true"
+                    "leaf": true
 				},
 				{
 					"name": "React",
 					"page": "react",
-                    "leaf": "true"
+                    "leaf": true
 				}
 			]
 		},
@@ -52,12 +57,12 @@
 			"sub": [{
 					"name": "Mobile App",
 					"page": "mobile-app",
-                    "leaf": "true"
+                    "leaf": true
 				},
 				{
 					"name": "Web App",
 					"page": "web-app",
-                    "leaf": "true"
+                    "leaf": true
 				}
 			]
 		},
@@ -66,17 +71,17 @@
 			"sub": [{
 					"name": "Blog",
 					"page": "blog",
-                    "leaf": "true"
+                    "leaf": true
 				},
 				{
 					"name": "Books",
 					"page": "books",
-                    "leaf": "true"
+                    "leaf": true
 				},
 				{
 					"name": "Shop",
 					"page": "shop",
-                    "leaf": "true"
+                    "leaf": true
 				}
 			]
 		}
