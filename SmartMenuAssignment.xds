@@ -6,8 +6,8 @@
             "cmdVersion": "6.5.3.6",
             "frameworkVersion": "6.5.3.57"
         },
-        "urlPrefixTemplate": "http://localhost:1841",
-        "urlPrefix": "http://localhost:1841",
+        "urlPrefixTemplate": "http://localhost:1841/",
+        "urlPrefix": "http://localhost:1841/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Auto Expand",
@@ -55,7 +55,7 @@
             "6c7e2bc1-5ada-4af1-b44f-767f36f24a9f"
         ],
         "resource": [
-            "9ccc856c-617a-4070-a2d5-9fd9ca9eeacf",
+            "7b08168a-29ff-4b98-b71a-43a3e75f4902",
             "c2ab4377-09b3-4121-b5cb-43c427a7f5bd",
             "57e7d0aa-13d4-43d2-ab84-383ff93e11da",
             "7e46d743-eee6-463b-8a8c-0130ca8c3548"

@@ -28,7 +28,8 @@ Ext.application({
     ],
     views: [
         'Main',
-        'CenterPanel'
+        'CenterPanel',
+        'MyContainer1'
     ],
     name: 'SmartMenu',
 

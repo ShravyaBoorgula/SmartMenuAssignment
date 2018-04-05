@@ -36,7 +36,100 @@ Ext.define('SmartMenu.store.MenuTreeStore', {
                     type: 'json',
                     rootProperty: 'titles'
                 }
+            },
+            listeners: {
+                load: {
+                    fn: me.onTreeStoreLoad,
+                    scope: me
+                }
             }
         }, cfg)]);
+    },
+
+    onTreeStoreLoad: function(treestore, records, successful, operation, node, eOpts) {
+        var me = this;
+        var navBar = Ext.ComponentQuery.query("[reference=navigationToolbar]")[0]; //get view of navigationToolbar;
+        var ctrPanel = Ext.ComponentQuery.query("[reference=centerPanel]")[0]; //get view of centerPanel;
+        Ext.each(records, function(rec, index){
+            var childrenLength = (rec.data.leaf === true)? 0 : rec.data.sub.length ;
+            var i = childrenLength-1;
+            var currentItem = rec.data;
+            console.log("rec: ", rec);
+            if(childrenLength > 0){
+                    navBar.add({
+                        xtype: "button",
+                        text: currentItem.name,
+                        listeners: {
+                             click: function(){
+                                    ctrPanel.setHtml("This is "+ currentItem.name + " content");
+                             }
+                        },
+                        menu: {
+                            xtype: 'menu',
+                            reference: "menu"+currentItem.name
+                        }
+                    });
+                    var menuBox = Ext.ComponentQuery.query("[reference=menu"+currentItem.name+"]")[0];
+                    while(i >= 0){
+                        if(currentItem.sub[i].leaf !== true){
+                            var childrenArr = currentItem.sub[i];
+                             menuBox.add({
+                                xtype: 'menuitem',
+                                text:  currentItem.sub[i].name,
+                                menu :{
+                                    xtype: 'menu',
+                                    reference: "menu"+currentItem.sub[i].name
+                                }
+                             });
+                             callMe("menu"+currentItem.sub[i].name, childrenArr);
+                        } else {
+                             menuBox.add({
+                                xtype: 'menuitem',
+                                text:  currentItem.sub[i].name,
+                             });
+                        }
+
+                        i--;
+                    }
+
+
+            } else{
+                navBar.add({
+                    xtype: "button",
+                    text: currentItem.name
+                });
+            }
+
+        }, this);
+
+        function callMe(subMenuRef, children){
+            //console.log("RefOfParent: ", subMenuRef);
+            //console.log("Children: ", children);
+            var subMenuBox = Ext.ComponentQuery.query("[reference="+subMenuRef+"]")[0];
+            var j = children.sub.length-1 ;
+            while(j >= 0){
+                if(children.sub[j].leaf !== true){
+                    var childrenArr = children.sub[j];
+                     subMenuBox.add({
+                         xtype: 'menuitem',
+                         text:  children.sub[j].name,
+                         menu :{
+                             xtype: 'menu',
+                             reference: "menu"+children.sub[j].name
+                         }
+                     });
+                     callMe("menu"+children.sub[j].name, childrenArr);
+                }
+                else {
+                    subMenuBox.add({
+                        xtype: 'menuitem',
+                        text:  children.sub[j].name,
+                    });
+                }
+                j--;
+            }
+
+        }
     }
+
 });

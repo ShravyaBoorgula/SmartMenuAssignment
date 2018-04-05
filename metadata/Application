@@ -15,14 +15,16 @@
         ],
         "views": [
             "Main",
-            "CenterPanel"
+            "CenterPanel",
+            "MyContainer1"
         ]
     },
     "configAlternates": {
         "name": "string",
         "models": "typedarray",
         "stores": "typedarray",
-        "views": "typedarray"
+        "views": "typedarray",
+        "controllers": "typedarray"
     },
     "name": "Application",
     "designerId": "application"

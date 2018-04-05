@@ -34,12 +34,18 @@ Ext.define('SmartMenu.view.Main', {
     },
     items: [
         {
-            xtype: 'navigationtoolbar',
-            dock: 'top'
-        },
-        {
-            xtype: 'centerpanel',
-            flex: 1
+            xtype: 'container',
+            flex: 1,
+            itemId: 'MainContainer',
+            items: [
+                {
+                    xtype: 'navigationtoolbar',
+                    dock: 'top'
+                },
+                {
+                    xtype: 'centerpanel'
+                }
+            ]
         }
     ]
 

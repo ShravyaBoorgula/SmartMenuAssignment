@@ -27,38 +27,55 @@
     "viewModelInstanceId": "e1aa748b-3cd4-40d0-8859-daf8a9af2d53",
     "cn": [
         {
-            "type": "linkedinstance",
+            "type": "Ext.container.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "top"
-            },
-            "configAlternates": {
-                "dock": "string"
-            },
-            "name": "navigationtoolbar",
-            "designerId": "7e64d451-ee0a-41a7-8a5b-6913a77617bd",
-            "masterInstanceId": "e0b877fa-abaf-4099-8bbe-b1164420bed4"
-        },
-        {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
+                "itemId": "MainContainer",
                 "layout|flex": 1
             },
             "configAlternates": {
+                "itemId": "string",
                 "layout|flex": "number"
             },
-            "name": "centerpanel",
-            "designerId": "86d0a892-e113-480e-b25f-63467086f1e9",
-            "masterInstanceId": "8e97055c-4d48-4e92-8011-3a578c949dc4"
+            "name": "MyContainer",
+            "designerId": "dc912ad1-bf3c-4667-b76f-8735438493dc",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
+                    "name": "navigationtoolbar",
+                    "designerId": "7e64d451-ee0a-41a7-8a5b-6913a77617bd",
+                    "masterInstanceId": "e0b877fa-abaf-4099-8bbe-b1164420bed4"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "centerpanel",
+                    "designerId": "86d0a892-e113-480e-b25f-63467086f1e9",
+                    "masterInstanceId": "8e97055c-4d48-4e92-8011-3a578c949dc4"
+                }
+            ]
         }
     ]
 }
