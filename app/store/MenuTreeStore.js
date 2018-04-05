@@ -48,26 +48,26 @@ Ext.define('SmartMenu.store.MenuTreeStore', {
 
     onTreeStoreLoad: function(treestore, records, successful, operation, node, eOpts) {
         var me = this;
-        var navBar = Ext.ComponentQuery.query("[reference=navigationToolbar]")[0]; //get view of navigationToolbar;
-        var ctrPanel = Ext.ComponentQuery.query("[reference=centerPanel]")[0]; //get view of centerPanel;
+        var navBar = Ext.ComponentQuery.query("[reference=navigationToolbar]")[0];
+        var ctrPanel = Ext.ComponentQuery.query("[reference=centerPanel]")[0];
         Ext.each(records, function(rec, index){
-            console.log("check: ", rec);
+            // console.log("record: ", rec);
             var childrenLength = (rec.data.leaf === true)? 0 : rec.data.sub.length ;
             var i = childrenLength-1;
             var currentItem = rec.data;
-            console.log("rec: ", rec);
             if(childrenLength > 0){
                     navBar.add({
                         xtype: "button",
                         text: currentItem.name,
                         listeners: {
-                            click: function (){
-                                ctrPanel.setHtml("This is "+ currentItem.name + " content");
-                            }
+                            click: onNavClick
                         },
                         menu: {
                             xtype: 'menu',
-                            reference: "menu"+currentItem.name
+                            reference: "menu"+currentItem.name,
+                            listeners: {
+                                click: onMenuClick
+                            }
                         }
                     });
                     var menuBox = Ext.ComponentQuery.query("[reference=menu"+currentItem.name+"]")[0];
@@ -79,7 +79,10 @@ Ext.define('SmartMenu.store.MenuTreeStore', {
                                 text:  currentItem.sub[i].name,
                                 menu :{
                                     xtype: 'menu',
-                                    reference: "menu"+currentItem.sub[i].name
+                                    reference: "menu"+currentItem.sub[i].name,
+                                    listeners: {
+                                        click: onMenuClick
+                                    }
                                 }
                              });
                              callMe("menu"+currentItem.sub[i].name, childrenArr);
@@ -97,15 +100,16 @@ Ext.define('SmartMenu.store.MenuTreeStore', {
             } else{
                 navBar.add({
                     xtype: "button",
-                    text: currentItem.name
+                    text: currentItem.name,
+                    listeners: {
+                            click: onNavClick
+                    }
                 });
             }
 
         }, this);
 
         function callMe(subMenuRef, children){
-            //console.log("RefOfParent: ", subMenuRef);
-            //console.log("Children: ", children);
             var subMenuBox = Ext.ComponentQuery.query("[reference="+subMenuRef+"]")[0];
             var j = children.sub.length-1 ;
             while(j >= 0){
@@ -116,7 +120,10 @@ Ext.define('SmartMenu.store.MenuTreeStore', {
                          text:  children.sub[j].name,
                          menu :{
                              xtype: 'menu',
-                             reference: "menu"+children.sub[j].name
+                             reference: "menu"+children.sub[j].name,
+                             listeners: {
+                                click: onMenuClick
+                             }
                          }
                      });
                      callMe("menu"+children.sub[j].name, childrenArr);
@@ -131,7 +138,15 @@ Ext.define('SmartMenu.store.MenuTreeStore', {
             }
         }
 
+        function onMenuClick(menu, item, click){
+            ctrPanel.setHtml("This is "+ item.text +" info page");
+            //console.log("item: ", item);
+        }
 
+        function onNavClick(btn, click){
+             ctrPanel.setHtml("This is "+ btn.text +" info page");
+            //console.log("menuBtn: ", btn);
+        }
     }
 
 });
