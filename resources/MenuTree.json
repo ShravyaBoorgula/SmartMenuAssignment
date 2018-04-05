@@ -1,61 +1,136 @@
 {
-"titles": [
-{
-"name" : "Company",
-"items" : [
-{
-"name": "About Us",
-"page" :"about-us"
+	"titles": [{
+			"name": "Company",
+			"sub": [{
+					"name": "About Us",
+					"page": "about-us",
+                    "leaf": true
 
-},
-{
-"name":"Team",
-"page":"team"
-}
-]
-},
-{
-"name" : "Technologies",
-"items" :[
-{
-"name" : "Sencha",
-"page": "sencha"
-}, 
-{
-"name" : "React",
-"page": "react"
-}
-]
-},
-{
-"name" : "Services",
-"items" :[
-{
-"name" : "Mobile App",
-"page": "mobile-app"
-}, 
-{
-"name" : "Web App",
-"page": "web-app"
-}
-]
-},
-{
-"name" : "Resources",
-items :[
-{
-"name" : "Blog",
-"page": "blog"
-}, 
-{
-"name" : "Books",
-"page": "books"
-},
-{
-"name": "Shop",
-"page": "shop"
-}
-]
-}
-]
+				},
+				{
+					"name": "Team",
+					"page": "team",
+                    "leaf": true
+				},
+				{
+					"name": "Clients",
+					"sub": [{
+							"name": "Qualcomm",
+							"page": "qualcomm",
+                             "leaf": true
+						},
+						{
+							"name": "TechMahindra",
+							"page": "techmahindra",
+                            "leaf": true
+						},
+						{
+							"name": "Tibco",
+                            "sub": [{
+                                    "name": "Sencha",
+                                    "page": "sencha",
+                                    "leaf": true
+                                },
+                                {
+                                    "name": "React",
+                                    "sub": [{
+                                            "name": "Mobile App",
+                                            "page": "mobile-app",
+                                            "leaf": true
+                                        },
+                                        {
+                                            "name": "Web App",
+                                            "page": "web-app",
+                                            "leaf": true
+                                        }
+                                    ]
+                                }
+                            ]
+                            
+						}
+					]
+				}
+			]
+		},
+        {
+            "name": "Career",
+            "page": "career",
+            "leaf": true
+        },
+		{
+			"name": "Technologies",
+			"sub": [{
+					"name": "Sencha",
+					"page": "sencha",
+                    "leaf": true
+				},
+				{
+					"name": "React",
+					"page": "react",
+                    "leaf": true
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"sub": [{
+					"name": "Mobile App",
+					"page": "mobile-app",
+                    "leaf": true
+				},
+				{
+					"name": "Web App",
+					"page": "web-app",
+                    "leaf": true
+				}
+			]
+		},
+		{
+			"name": "Resources",
+			"sub": [{
+					"name": "Blog",
+					"page": "blog",
+                    "leaf": true
+				},
+				{
+					"name": "Books",
+                    "sub": [{
+                            "name": "General",
+                            "page": "general",
+                            "leaf": true
+                        },
+                        {
+                            "name": "Sencha",
+                            "sub": [{
+                                    "name": "Touch",
+                                    "page": "touch",
+                                    "leaf": true
+                                },
+                                {
+                                    "name": "ExtJs",
+                                    "page": "extjs",
+                                    "leaf": true
+                                },
+                                {
+                                    "name": "Classic",
+                                    "page": "classic",
+                                    "leaf": true
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Angular",
+                            "page": "angular",
+                            "leaf": true
+                        }
+                    ]
+				},
+				{
+					"name": "Shop",
+					"page": "shop",
+                    "leaf": true
+				}
+			]
+		}
+	]
 }
