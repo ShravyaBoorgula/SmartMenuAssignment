@@ -61,7 +61,9 @@ Ext.define('SmartMenu.store.MenuTreeStore', {
                         xtype: "button",
                         text: currentItem.name,
                         listeners: {
-                             click:  onSelectMenu(this, click, currentItem)
+                            click: function (){
+                                ctrPanel.setHtml("This is "+ currentItem.name + " content");
+                            }
                         },
                         menu: {
                             xtype: 'menu',
@@ -129,9 +131,7 @@ Ext.define('SmartMenu.store.MenuTreeStore', {
             }
         }
 
-        function onSelectMenu(btn, click, currentItem){
-            ctrPanel.setHtml("This is "+ currentItem.name + " content");
-        }
+
     }
 
 });
