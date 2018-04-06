@@ -19,6 +19,7 @@ Ext.define('SmartMenu.view.Main', {
 
     requires: [
         'SmartMenu.view.MainViewModel',
+        'SmartMenu.view.MainViewController',
         'SmartMenu.view.NavigationToolbar',
         'SmartMenu.view.CenterPanel',
         'Ext.toolbar.Toolbar'
@@ -27,7 +28,7 @@ Ext.define('SmartMenu.view.Main', {
     viewModel: {
         type: 'main'
     },
-
+    controller : 'main',
     layout: {
         type: 'vbox',
         align: 'stretch'
