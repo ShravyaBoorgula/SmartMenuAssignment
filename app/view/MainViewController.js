@@ -15,5 +15,138 @@
 
 Ext.define('SmartMenu.view.MainViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.main'
+    requires: ['Ext.route.Router'],
+    alias: 'controller.main',
+
+    init: function(view){
+    	console.log("called MainViewController, view: ", view);
+        var menuStore = Ext.getStore("MenuTreeStore");
+        console.log("menuStore: ", menuStore);
+        var me = this;
+        menuStore.on("load", function(treestore, records, successful, operation, node, eOpts) {
+            var me = this;
+            var navBar = Ext.ComponentQuery.query("[reference=navigationToolbar]")[0];
+            var ctrPanel = Ext.ComponentQuery.query("[reference=centerPanel]")[0];
+            Ext.each(records, function(rec, index){
+                // console.log("record: ", rec);
+                var childrenLength = (rec.data.leaf === true)? 0 : rec.data.sub.length ;
+                var i = childrenLength-1;
+                var currentItem = rec.data;
+                if(childrenLength > 0){
+                        navBar.add({
+                            xtype: "button",
+                            text: currentItem.name,
+                            listeners: {
+                                click: "onNavClick"
+                            },
+                            menu: {
+                                xtype: 'menu',
+                                reference: "menu"+currentItem.name,
+                                listeners: {
+                                    click: "onMenuClick"
+                                }
+                            }
+                        });
+                        var menuBox = Ext.ComponentQuery.query("[reference=menu"+currentItem.name+"]")[0];
+                        while(i >= 0){
+                            if(currentItem.sub[i].leaf !== true){
+                                var childrenArr = currentItem.sub[i];
+                                 menuBox.add({
+                                    xtype: 'menuitem',
+                                    text:  currentItem.sub[i].name,
+                                    //id:  currentItem.sub[i].page, 
+                                    menu :{
+                                        xtype: 'menu',
+                                        reference: "menu"+currentItem.sub[i].name,
+                                        listeners: {
+                                            click:  "onMenuClick"
+                                        }
+                                    }
+                                 });
+                                 callMe("menu"+currentItem.sub[i].name, childrenArr);
+                            } else {
+                                 menuBox.add({
+                                    xtype: 'menuitem',
+                                    text:  currentItem.sub[i].name,
+                                    //id:  currentItem.sub[i].page
+                                 });
+                            }
+
+                            i--;
+                        }
+
+
+                } else{
+                    navBar.add({
+                        xtype: "button",
+                        text: currentItem.name,
+                        //id:  currentItem.page,
+                        listeners: {
+                                click: "onNavClick"
+                        }
+                    });
+                }
+
+            }, this);
+
+            function callMe(subMenuRef, children){
+                var subMenuBox = Ext.ComponentQuery.query("[reference="+subMenuRef+"]")[0];
+                var j = children.sub.length-1 ;
+                while(j >= 0){
+                    if(children.sub[j].leaf !== true){
+                        var childrenArr = children.sub[j];
+                         subMenuBox.add({
+                             xtype: 'menuitem',
+                             text:  children.sub[j].name,
+                             //id:  children.sub[j].page,
+                             menu :{
+                                 xtype: 'menu',
+                                 reference: "menu"+children.sub[j].name,
+                                 listeners: {
+                                    click:  "onMenuClick"
+                                 }
+                             }
+                         });
+                         callMe("menu"+children.sub[j].name, childrenArr);
+                    }
+                    else {
+                        subMenuBox.add({
+                            xtype: 'menuitem',
+                            text:  children.sub[j].name,
+                            //id:  children.sub[j].page
+                        });
+                    }
+                    j--;
+                }
+            }
+  
+        }, me);
+    },
+
+    onMenuClick: function (menu, item, click){
+        var ctrPanel = Ext.ComponentQuery.query("[reference=centerPanel]")[0];
+        ctrPanel.setHtml("This is "+ item.text +" info page");
+        console.log("item: ", item);
+        
+    },
+
+    onNavClick: function (btn, click){
+         var ctrPanel = Ext.ComponentQuery.query("[reference=centerPanel]")[0];
+         ctrPanel.setHtml("This is "+ btn.text +" info page");
+         console.log("menuBtn: ", btn);
+    },
+
+    routes: {
+    	"smartmenu": {
+    		action: "onSomeChange"
+    	}
+    },
+
+    onSomeChange: function(){
+    	//console.log("called from routes : ");
+    }
+
+   
+
 });
+ 
